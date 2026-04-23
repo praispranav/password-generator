@@ -1,0 +1,215 @@
+.keypad-page {
+  width: 100%;
+  min-height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 32px 16px;
+  box-sizing: border-box;
+}
+
+.keypad-card {
+  width: min(460px, 100%);
+  padding: 24px;
+  border: 1px solid var(--border);
+  border-radius: 18px;
+  background: var(--card-bg);
+  box-shadow: var(--card-shadow);
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+
+.keypad-title {
+  margin: 0;
+  text-align: left;
+  font-size: 1.5rem;
+}
+
+.display-input {
+  width: 100%;
+  box-sizing: border-box;
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  padding: 12px 14px;
+  font-size: 1rem;
+  background: var(--input-bg);
+  color: var(--text-h);
+}
+
+.display-input:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 2px;
+}
+
+.template-controls {
+  display: flex;
+  align-items: end;
+  gap: 12px;
+}
+
+.template-select-wrap {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  flex: 1;
+  text-align: left;
+}
+
+.template-label {
+  font-size: 0.82rem;
+  font-weight: 600;
+}
+
+.template-select,
+.template-reset-button {
+  height: 40px;
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  background: var(--input-bg);
+  color: var(--text-h);
+  font-size: 0.9rem;
+}
+
+.template-select {
+  padding: 0 10px;
+}
+
+.template-reset-button {
+  padding: 0 14px;
+  cursor: pointer;
+  font-weight: 600;
+}
+
+.template-select:focus-visible,
+.template-reset-button:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 1px;
+}
+
+.key-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 14px;
+}
+
+.key-button,
+.operator-button {
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  background: var(--key-bg);
+  color: var(--text-h);
+  cursor: pointer;
+}
+
+.key-button {
+  min-height: 84px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 4px;
+}
+
+.key-number {
+  font-size: 1.25rem;
+  font-weight: 700;
+}
+
+.key-label {
+  font-size: 0.85rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.operator-row {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 16px;
+  margin-top: 6px;
+}
+
+.operator-button {
+  height: 48px;
+  font-size: 1.2rem;
+  font-weight: 700;
+}
+
+.key-button:hover,
+.operator-button:hover {
+  border-color: var(--accent);
+}
+
+.key-button:focus-visible,
+.operator-button:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 2px;
+}
+
+.preset-panel {
+  border-top: 1px solid var(--border);
+  padding-top: 14px;
+}
+
+.preset-title {
+  margin: 0 0 10px;
+  font-size: 1rem;
+  text-align: left;
+}
+
+.preset-list {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 10px;
+}
+
+.preset-item {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  text-align: left;
+}
+
+.preset-index {
+  font-size: 0.8rem;
+  font-weight: 600;
+}
+
+.preset-input {
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  padding: 8px 10px;
+  font-size: 0.85rem;
+  text-transform: uppercase;
+  background: var(--input-bg);
+  color: var(--text-h);
+}
+
+.preset-input:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 1px;
+}
+
+@media (max-width: 560px) {
+  .keypad-card {
+    padding: 18px;
+    gap: 14px;
+  }
+
+  .template-controls {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .key-grid {
+    gap: 10px;
+  }
+
+  .key-button {
+    min-height: 72px;
+  }
+
+  .operator-row {
+    gap: 10px;
+  }
+}
